@@ -1,0 +1,1297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Collections &amp; Generics-1 &mdash; code-java  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Collections &amp; Generics-2" href="index2.html" />
+    <link rel="prev" title="Serialization and Deserialization" href="../serde/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> code-java
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dayOne/dayOne.html"><strong>Basic se bhi besic</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designPatterns/index.html"><strong>Design Patterns</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testLoging/index.html"><strong>Testing &amp; Logging</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serde/index.html"><strong>Serialization and Deserialization</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Collections &amp; Generics-1</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generics">01. Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-arrays">02. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#array-functions">03. Array Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vector">04. Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#singly-linked-list"><strong>05. Singly Linked list</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pdf-link">5.1 Pdf link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-class">5.2 Main class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linkedlist-java">5.3 LinkedList.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-java">5.4 Node.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#doublylinked-list"><strong>06. Doublylinked List</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">6.1 Pdf link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#doublylinkedlist-java">6.2 DoublyLinkedList.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-java">6.3 Main.Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">6.4 node.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stacks-methods-for-stacks">07. Stacks, Methods for stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#queues-methods-for-queue"><strong>08. Queues, Methods for Queue</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">8.1 Pdf link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">8.2 Main Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#queue-java">8.3 Queue.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#queuearray-java">8.4 QueueArray.java</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index2.html"><strong>Collections &amp; Generics-2</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crud/index.html"><strong>CRUDs</strong></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">code-java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>Collections &amp; Generics-1</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/javadocs/collectionsGenerics/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="collections-generics-1">
+<h1><strong>Collections &amp; Generics-1</strong><a class="headerlink" href="#collections-generics-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="generics">
+<h2>01. Generics<a class="headerlink" href="#generics" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=18xkjoTYaAu0A2bBFkXQi_WUoFcUUdVC6">https://drive.google.com/open?id=18xkjoTYaAu0A2bBFkXQi_WUoFcUUdVC6</a></p>
+</div>
+<div class="section" id="working-with-arrays">
+<h2>02. Working with Arrays<a class="headerlink" href="#working-with-arrays" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOSHlOU3doNFFtcDA">https://drive.google.com/open?id=0B5WQSHp6H2ZOSHlOU3doNFFtcDA</a></p>
+</div>
+<div class="section" id="array-functions">
+<h2>03. Array Functions<a class="headerlink" href="#array-functions" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=1Iasfr3r3Th8WMLDOGR1QDzeSrYmSCC-F">https://drive.google.com/open?id=1Iasfr3r3Th8WMLDOGR1QDzeSrYmSCC-F</a></p>
+</div>
+<div class="section" id="vector">
+<h2>04. Vector<a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=18o1p-EwmQfqQRpUJomPtE2xR37Si7lXT">https://drive.google.com/open?id=18o1p-EwmQfqQRpUJomPtE2xR37Si7lXT</a></p>
+</div>
+<div class="section" id="singly-linked-list">
+<h2><strong>05. Singly Linked list</strong><a class="headerlink" href="#singly-linked-list" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pdf-link">
+<h2>5.1 Pdf link<a class="headerlink" href="#pdf-link" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOcXRxTDhoRjEzTlk">https://drive.google.com/open?id=0B5WQSHp6H2ZOcXRxTDhoRjEzTlk</a></p>
+</div>
+<div class="section" id="main-class">
+<h2>5.2 Main class<a class="headerlink" href="#main-class" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">LinkedList</span> <span class="n">linkedList</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LinkedList</span><span class="p">();</span>
+
+<span class="n">linkedList</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">linkedList</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
+<span class="n">linkedList</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span>
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;List after prepend : &quot;</span> <span class="o">+</span> <span class="n">linkedList</span><span class="p">);</span>
+
+<span class="n">linkedList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">linkedList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">34</span><span class="p">);</span>
+<span class="n">linkedList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;List after append : &quot;</span> <span class="o">+</span> <span class="n">linkedList</span><span class="p">);</span>
+
+<span class="n">linkedList</span><span class="o">.</span><span class="n">removeFirst</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;List after removing first element : &quot;</span> <span class="o">+</span> <span class="n">linkedList</span><span class="p">);</span>
+
+<span class="n">linkedList</span><span class="o">.</span><span class="n">removeLast</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;List after removing last element : &quot;</span> <span class="o">+</span> <span class="n">linkedList</span><span class="p">);</span>
+
+    <span class="n">linkedList</span><span class="o">.</span><span class="n">insertAt</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">500</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Insert &quot;</span> <span class="o">+</span> <span class="n">linkedList</span><span class="p">);</span>
+
+    <span class="n">linkedList</span><span class="o">.</span><span class="n">removeAt</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Remove at : &quot;</span> <span class="o">+</span> <span class="n">linkedList</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">sizeOfList</span> <span class="o">=</span> <span class="n">linkedList</span><span class="o">.</span><span class="n">getSize</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;The size of list is : &quot;</span> <span class="o">+</span> <span class="n">sizeOfList</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="linkedlist-java">
+<h2>5.3 LinkedList.java<a class="headerlink" href="#linkedlist-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">6</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">LinkedList</span> <span class="n">extends</span> <span class="n">Node</span><span class="p">{</span>
+
+    <span class="n">private</span> <span class="n">Node</span> <span class="n">header</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="n">Node</span> <span class="n">lastNode</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">size</span><span class="p">;</span>
+
+
+
+    <span class="n">public</span> <span class="n">LinkedList</span><span class="p">(){</span>
+
+        <span class="n">header</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">null</span><span class="p">);</span>
+
+        <span class="n">lastNode</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="o">//</span><span class="n">add</span> <span class="n">node</span> <span class="n">to</span> <span class="n">beginning</span> <span class="n">of</span> <span class="nb">list</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">prepend</span><span class="p">(</span><span class="n">Integer</span> <span class="n">data</span><span class="p">){</span>
+
+        <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="nb">list</span> <span class="ow">is</span> <span class="n">empty</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="o">//</span><span class="n">when</span> <span class="nb">list</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">empty</span>
+
+        <span class="k">else</span> <span class="p">{</span>
+
+            <span class="n">Node</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+            <span class="n">size</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="o">//</span><span class="n">adding</span> <span class="n">node</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">append</span><span class="p">(</span><span class="n">Integer</span> <span class="n">data</span><span class="p">){</span>
+
+        <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="nb">list</span> <span class="ow">is</span> <span class="n">empty</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span><span class="p">{</span>
+
+            <span class="n">lastNode</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">removeFirst</span><span class="p">(){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+        <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">removeLast</span><span class="p">(){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+
+            <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+            <span class="k">while</span><span class="p">(</span><span class="n">count</span> <span class="o">!=</span> <span class="n">size</span> <span class="o">-</span><span class="mi">1</span> <span class="p">){</span>
+
+                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+                <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+
+            <span class="p">}</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">lastNode</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+            <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">insertAt</span><span class="p">(</span><span class="nb">int</span> <span class="n">index</span><span class="p">,</span> <span class="nb">int</span> <span class="n">data</span><span class="p">){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">){</span>
+
+            <span class="k">return</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+
+            <span class="n">prepend</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">size</span><span class="p">){</span>
+
+            <span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span><span class="p">{</span>
+
+            <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+            <span class="n">Node</span> <span class="n">x</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+            <span class="k">while</span><span class="p">(</span><span class="n">count</span> <span class="o">!=</span> <span class="n">index</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+
+                <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+                <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+
+            <span class="p">}</span>
+
+            <span class="n">Node</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="n">x</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">removeAt</span><span class="p">(</span><span class="nb">int</span> <span class="n">index</span><span class="p">){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">){</span>
+
+            <span class="k">return</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+
+            <span class="n">removeFirst</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">size</span><span class="p">){</span>
+
+            <span class="n">removeLast</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span><span class="p">{</span>
+
+            <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+            <span class="k">while</span><span class="p">(</span><span class="n">count</span> <span class="o">!=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">){</span>
+
+                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+
+            <span class="p">}</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getSize</span><span class="p">(){</span>
+
+        <span class="k">return</span> <span class="n">size</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">(){</span>
+
+        <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="p">;</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">!=</span> <span class="n">null</span><span class="p">){</span>
+
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="n">n</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="node-java">
+<h2>5.4 Node.java<a class="headerlink" href="#node-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+
+
+<span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">6</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Node</span> <span class="p">{</span>
+
+    <span class="n">protected</span> <span class="n">Integer</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="n">protected</span> <span class="n">Node</span> <span class="nb">next</span><span class="p">;</span>
+
+
+
+    <span class="n">public</span> <span class="n">Node</span><span class="p">(</span><span class="n">Integer</span> <span class="n">data</span><span class="p">){</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+
+        <span class="nb">next</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">Node</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="doublylinked-list">
+<h2><strong>06. Doublylinked List</strong><a class="headerlink" href="#doublylinked-list" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id1">
+<h2>6.1 Pdf link<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOWnRjZDIxcGpFd2M">https://drive.google.com/open?id=0B5WQSHp6H2ZOWnRjZDIxcGpFd2M</a></p>
+</div>
+<div class="section" id="doublylinkedlist-java">
+<h2>6.2 DoublyLinkedList.java<a class="headerlink" href="#doublylinkedlist-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+
+
+<span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">6</span><span class="o">/</span><span class="mi">15</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">DoublyLinkedList</span> <span class="p">{</span>
+
+    <span class="n">private</span> <span class="n">Node</span> <span class="n">header</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="n">Node</span> <span class="n">lastNode</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">size</span><span class="p">;</span>
+
+
+
+    <span class="n">public</span> <span class="n">DoublyLinkedList</span><span class="p">(){</span>
+
+        <span class="n">header</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">null</span><span class="p">);</span>
+
+        <span class="n">lastNode</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="o">//</span><span class="n">add</span> <span class="n">node</span> <span class="n">to</span> <span class="n">beginning</span> <span class="n">of</span> <span class="nb">list</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">prepend</span><span class="p">(</span><span class="n">Integer</span> <span class="n">data</span><span class="p">){</span>
+
+        <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="nb">list</span> <span class="ow">is</span> <span class="n">empty</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span><span class="p">{</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="o">//</span><span class="n">adding</span> <span class="n">node</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">append</span><span class="p">(</span><span class="n">Integer</span> <span class="n">data</span><span class="p">){</span>
+
+        <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="nb">list</span> <span class="ow">is</span> <span class="n">empty</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span>
+
+            <span class="n">size</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span><span class="p">{</span>
+
+            <span class="n">lastNode</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">lastNode</span> <span class="p">;</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">removeFirst</span><span class="p">(){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+        <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">removeLast</span><span class="p">(){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+
+            <span class="n">header</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+
+            <span class="n">lastNode</span> <span class="o">=</span> <span class="n">lastNode</span><span class="o">.</span><span class="n">previous</span><span class="p">;</span>
+
+            <span class="n">lastNode</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">insertAt</span><span class="p">(</span><span class="nb">int</span> <span class="n">index</span><span class="p">,</span> <span class="nb">int</span> <span class="n">data</span><span class="p">){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">){</span>
+
+            <span class="k">return</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+
+            <span class="n">prepend</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">size</span><span class="p">){</span>
+
+            <span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span><span class="p">{</span>
+
+            <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+            <span class="n">Node</span> <span class="n">x</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+            <span class="k">while</span><span class="p">(</span><span class="n">count</span> <span class="o">!=</span> <span class="n">index</span><span class="p">){</span>
+
+                <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+                <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+
+            <span class="p">}</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">previous</span><span class="p">;</span>
+
+            <span class="n">x</span><span class="o">.</span><span class="n">previous</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">x</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">removeAt</span><span class="p">(</span><span class="nb">int</span> <span class="n">index</span><span class="p">){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">){</span>
+
+            <span class="k">return</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+
+            <span class="n">removeFirst</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">size</span><span class="p">){</span>
+
+            <span class="n">removeLast</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span><span class="p">{</span>
+
+            <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+            <span class="k">while</span><span class="p">(</span><span class="n">count</span> <span class="o">!=</span> <span class="n">index</span><span class="p">){</span>
+
+                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+
+            <span class="p">}</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">previous</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+            <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">previous</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getSize</span><span class="p">(){</span>
+
+        <span class="k">return</span> <span class="n">size</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">(){</span>
+
+        <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="p">;</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">!=</span> <span class="n">null</span><span class="p">){</span>
+
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="n">n</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">reverseString</span><span class="p">(){</span>
+
+        <span class="n">Node</span> <span class="n">n</span> <span class="o">=</span> <span class="n">lastNode</span><span class="p">;</span>
+
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="p">;</span>
+
+        <span class="nb">int</span> <span class="n">tempSize</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="n">tempSize</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="n">n</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">previous</span> <span class="p">;</span>
+
+            <span class="n">tempSize</span> <span class="o">--</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="main-java">
+<h2>6.3 Main.Java<a class="headerlink" href="#main-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">DoublyLinkedList</span> <span class="n">doublyLinkedList</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DoublyLinkedList</span><span class="p">();</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;prepend : &quot;</span> <span class="o">+</span> <span class="n">doublyLinkedList</span><span class="p">);</span>
+
+
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+
+
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;append : &quot;</span> <span class="o">+</span> <span class="n">doublyLinkedList</span><span class="p">);</span>
+
+
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">removeFirst</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;removeFirst : &quot;</span> <span class="o">+</span> <span class="n">doublyLinkedList</span><span class="p">);</span>
+
+
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">removeLast</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;removeLast : &quot;</span> <span class="o">+</span> <span class="n">doublyLinkedList</span><span class="p">);</span>
+
+
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">insertAt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">356</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;insertAt : &quot;</span> <span class="o">+</span> <span class="n">doublyLinkedList</span><span class="p">);</span>
+
+
+
+    <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">removeAt</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;removeLast : &quot;</span> <span class="o">+</span> <span class="n">doublyLinkedList</span><span class="p">);</span>
+
+
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;reverse string : &quot;</span> <span class="o">+</span> <span class="n">doublyLinkedList</span><span class="o">.</span><span class="n">reverseString</span><span class="p">());</span>
+
+
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>6.4 node.java<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+
+
+<span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">6</span><span class="o">/</span><span class="mi">15</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Node</span> <span class="p">{</span>
+
+    <span class="n">protected</span> <span class="n">Integer</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="n">protected</span> <span class="n">Node</span> <span class="nb">next</span><span class="p">;</span>
+
+    <span class="n">protected</span> <span class="n">Node</span> <span class="n">previous</span><span class="p">;</span>
+
+
+
+    <span class="n">public</span> <span class="n">Node</span><span class="p">(</span><span class="n">Integer</span> <span class="n">data</span><span class="p">){</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+
+        <span class="nb">next</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="n">previous</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stacks-methods-for-stacks">
+<h2>07. Stacks, Methods for stacks<a class="headerlink" href="#stacks-methods-for-stacks" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOVGJJaWhhRXE2a0k">https://drive.google.com/open?id=0B5WQSHp6H2ZOVGJJaWhhRXE2a0k</a></p>
+</div>
+<div class="section" id="queues-methods-for-queue">
+<h2><strong>08. Queues, Methods for Queue</strong><a class="headerlink" href="#queues-methods-for-queue" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id3">
+<h2>8.1 Pdf link<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOcDZqaVV2LTVqMTQ">https://drive.google.com/open?id=0B5WQSHp6H2ZOcDZqaVV2LTVqMTQ</a></p>
+</div>
+<div class="section" id="id4">
+<h2>8.2 Main Class<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">Queue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">new</span> <span class="n">QueueArray</span><span class="p">();</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span>
+
+
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="queue-java">
+<h2>8.3 Queue.java<a class="headerlink" href="#queue-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">Queue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">new</span> <span class="n">QueueArray</span><span class="p">();</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span>
+
+
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="queuearray-java">
+<h2>8.4 QueueArray.java<a class="headerlink" href="#queuearray-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">6</span><span class="o">/</span><span class="mi">17</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">QueueArray</span> <span class="n">implements</span> <span class="n">Queue</span><span class="p">{</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">size</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">header</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">tail</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
+
+
+
+    <span class="n">public</span> <span class="n">QueueArray</span><span class="p">(){</span>
+
+        <span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">QueueArray</span><span class="p">(</span><span class="nb">int</span> <span class="n">size</span><span class="p">){</span>
+
+
+
+        <span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">enqueue</span><span class="p">(</span><span class="nb">int</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">isFull</span><span class="p">())</span>
+
+            <span class="n">reSize</span><span class="p">();</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">isEmpty</span><span class="p">()){</span>
+
+            <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+            <span class="n">tail</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+            <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+
+            <span class="n">size</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="p">{</span>
+
+            <span class="n">tail</span> <span class="o">=</span> <span class="p">(</span><span class="n">tail</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">array</span><span class="o">.</span><span class="n">length</span><span class="p">;</span>
+
+            <span class="n">array</span><span class="p">[</span><span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+
+            <span class="n">size</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="n">boolean</span> <span class="n">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="n">boolean</span> <span class="n">isFull</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">array</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="n">size</span><span class="p">;</span>
+
+
+
+    <span class="p">}</span>
+
+
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getSize</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">size</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">reSize</span><span class="p">(){</span>
+
+        <span class="nb">int</span><span class="p">[]</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[</span><span class="n">array</span><span class="o">.</span><span class="n">length</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+            <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[(</span><span class="n">header</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">array</span><span class="o">.</span><span class="n">length</span><span class="p">];</span>
+
+        <span class="p">}</span>
+
+        <span class="n">array</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+        <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">tail</span>  <span class="o">=</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span> <span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="n">array</span><span class="p">[(</span><span class="n">header</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">array</span><span class="o">.</span><span class="n">length</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="n">Integer</span> <span class="n">dequeue</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span>
+
+            <span class="k">return</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">header</span> <span class="o">==</span> <span class="n">tail</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="nb">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">header</span><span class="p">];</span>
+
+            <span class="n">header</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+            <span class="n">tail</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+            <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+            <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="p">{</span>
+
+            <span class="nb">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">header</span><span class="p">];</span>
+
+            <span class="n">header</span> <span class="o">=</span> <span class="p">(</span><span class="n">header</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">array</span><span class="o">.</span><span class="n">length</span><span class="p">;</span>
+
+            <span class="n">size</span><span class="o">--</span><span class="p">;</span>
+
+            <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="index2.html" class="btn btn-neutral float-right" title="Collections &amp; Generics-2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../serde/index.html" class="btn btn-neutral float-left" title="Serialization and Deserialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, readTheDoccs
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

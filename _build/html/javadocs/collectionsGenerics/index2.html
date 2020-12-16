@@ -1,0 +1,911 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Collections &amp; Generics-2 &mdash; code-java  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CRUDs" href="../crud/index.html" />
+    <link rel="prev" title="Collections &amp; Generics-1" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> code-java
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dayOne/dayOne.html"><strong>Basic se bhi besic</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designPatterns/index.html"><strong>Design Patterns</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testLoging/index.html"><strong>Testing &amp; Logging</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serde/index.html"><strong>Serialization and Deserialization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html"><strong>Collections &amp; Generics-1</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Collections &amp; Generics-2</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#intro-to-collections-list-array-list"><strong>09. intro to Collections , List | array list</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flow">9.1 Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-class">9.2 Main Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arraylisthelper-java">9.3 ArrayListHelper.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hospital-java">9.4 Hospital.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#collections-linked-list"><strong>10. Collections | Linked list</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#links">10.1 Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">10.2 Main Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#appointmenthelper">10.3 AppointmentHelper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#appointment-java">10.4 Appointment.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#collections-stacks-queues"><strong>11. Collections | Stacks &amp; queues</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pdf-link">11.1 Pdf link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">11.2 Main Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stacks-java">11.3 Stacks.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arraystack-java">11.4 ArrayStack.java</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../crud/index.html"><strong>CRUDs</strong></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">code-java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>Collections &amp; Generics-2</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/javadocs/collectionsGenerics/index2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="collections-generics-2">
+<h1><strong>Collections &amp; Generics-2</strong><a class="headerlink" href="#collections-generics-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro-to-collections-list-array-list">
+<h2><strong>09. intro to Collections , List | array list</strong><a class="headerlink" href="#intro-to-collections-list-array-list" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="flow">
+<h2>9.1 Flow<a class="headerlink" href="#flow" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOZTVTN3RqSDR6eG8">https://drive.google.com/open?id=0B5WQSHp6H2ZOZTVTN3RqSDR6eG8</a></p>
+</div>
+<div class="section" id="main-class">
+<h2>9.2 Main Class<a class="headerlink" href="#main-class" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ArrayListHelper</span> <span class="n">a</span> <span class="o">=</span><span class="n">new</span> <span class="n">ArrayListHelper</span><span class="p">();</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">createArrayList</span><span class="p">();</span>
+
+
+        <span class="n">Hospital</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Hospital</span><span class="p">(</span><span class="mi">002</span><span class="p">,</span> <span class="s2">&quot;AIIMS&quot;</span><span class="p">,</span> <span class="s2">&quot;South Delhi&quot;</span><span class="p">);</span>
+        <span class="n">Hospital</span> <span class="n">h2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Hospital</span><span class="p">(</span><span class="mi">235</span><span class="p">,</span> <span class="s2">&quot;Safdarjung&quot;</span><span class="p">,</span> <span class="s2">&quot;South-East Delhi&quot;</span><span class="p">);</span>
+        <span class="n">Hospital</span> <span class="n">h3</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Hospital</span><span class="p">(</span><span class="mi">030</span><span class="p">,</span> <span class="s2">&quot;Pentamed&quot;</span><span class="p">,</span> <span class="s2">&quot;Model Town&quot;</span><span class="p">);</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Hospital</span><span class="o">&gt;</span> <span class="n">hospitalNames</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">h1</span><span class="p">);</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">h2</span><span class="p">);</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">h3</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="k">for</span> <span class="n">each</span> <span class="n">example</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Hospital</span> <span class="n">names</span> <span class="p">:</span> <span class="n">hospitalNames</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="o">//</span> <span class="n">Iterator</span> <span class="n">example</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;All hospital : &quot;</span>  <span class="o">+</span> <span class="n">hospitalNames</span><span class="p">);</span>
+
+        <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Hospital</span><span class="o">&gt;</span> <span class="n">hIterator</span> <span class="o">=</span> <span class="n">hospitalNames</span><span class="o">.</span><span class="n">iterator</span><span class="p">();</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="n">hIterator</span><span class="o">.</span><span class="n">hasNext</span><span class="p">()){</span>
+
+            <span class="n">Hospital</span> <span class="n">hospital</span> <span class="o">=</span> <span class="n">hIterator</span><span class="o">.</span><span class="n">next</span><span class="p">();</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">hospital</span><span class="o">.</span><span class="n">getId</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">hospital</span><span class="p">);</span>
+            <span class="k">else</span>
+                <span class="n">hIterator</span><span class="o">.</span><span class="n">remove</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;After loop &amp; condition : &quot;</span> <span class="o">+</span> <span class="n">hospitalNames</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="arraylisthelper-java">
+<h2>9.3 ArrayListHelper.java<a class="headerlink" href="#arraylisthelper-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Collections</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ArrayListHelper</span> <span class="p">{</span>
+    <span class="n">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">hospitalNames</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">ArrayListHelper</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">hospitalNames</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">getHospitalNames</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">hospitalNames</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setHospitalNames</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">hospitalNames</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">hospitalNames</span> <span class="o">=</span> <span class="n">hospitalNames</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">createArrayList</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">hospitalNames</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+        <span class="o">//</span> <span class="n">adding</span> <span class="n">elements</span> <span class="n">to</span> <span class="nb">list</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;BLK&quot;</span><span class="p">);</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">);</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Fortis&quot;</span><span class="p">);</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Apollo&quot;</span><span class="p">);</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;AIIMS&quot;</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">sort</span> <span class="n">arrayList</span>
+        <span class="n">Collections</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">hospitalNames</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="nb">print</span> <span class="nb">list</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;The names are : &quot;</span> <span class="o">+</span> <span class="n">hospitalNames</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">access</span> <span class="n">via</span> <span class="n">new</span> <span class="k">for</span><span class="o">-</span><span class="n">loop</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">names</span> <span class="p">:</span> <span class="n">hospitalNames</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="o">//</span><span class="n">get</span> <span class="n">size</span> <span class="n">of</span> <span class="n">arrayList</span>
+        <span class="nb">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">hospitalNames</span><span class="o">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Size of list is : &quot;</span> <span class="o">+</span> <span class="n">size</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">replace</span> <span class="n">element</span> <span class="kn">from</span> <span class="nn">any</span> <span class="n">index</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;BLK Delhi&quot;</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Element at index 2 replaced : &quot;</span> <span class="o">+</span> <span class="n">hospitalNames</span><span class="p">);</span>
+
+        <span class="o">//</span> <span class="n">check</span> <span class="n">an</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">list</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Is BLK in the list  : &quot;</span> <span class="o">+</span> <span class="n">hospitalNames</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;BLK&quot;</span><span class="p">));</span>
+
+        <span class="o">//</span><span class="n">check</span> <span class="k">if</span> <span class="nb">list</span> <span class="ow">is</span> <span class="n">empty</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Is list empty : &quot;</span> <span class="o">+</span> <span class="n">hospitalNames</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">());</span>
+
+        <span class="o">//</span><span class="n">remove</span> <span class="n">an</span> <span class="n">element</span>
+        <span class="n">hospitalNames</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">hospitalNames</span><span class="p">);</span>
+
+<span class="o">//</span>        <span class="o">//</span><span class="n">copying</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">to</span> <span class="n">another</span>
+<span class="o">//</span>        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">copyOfStringList</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="o">//</span>        <span class="n">copyOfStringList</span><span class="o">.</span><span class="n">addAll</span><span class="p">(</span><span class="n">hospitalNames</span><span class="p">);</span>
+<span class="o">//</span>
+<span class="o">//</span>        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Copy of list : &quot;</span> <span class="o">+</span> <span class="n">copyOfStringList</span><span class="p">);</span>
+<span class="o">//</span>
+<span class="o">//</span>        <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">nameItertor</span> <span class="o">=</span> <span class="n">hospitalNames</span><span class="o">.</span><span class="n">iterator</span><span class="p">();</span>
+<span class="o">//</span>        <span class="k">while</span><span class="p">(</span><span class="n">nameItertor</span><span class="o">.</span><span class="n">hasNext</span><span class="p">()){</span>
+<span class="o">//</span>            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">nameItertor</span><span class="o">.</span><span class="n">next</span><span class="p">());</span>
+<span class="o">//</span>        <span class="p">}</span>
+
+
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hospital-java">
+<h2>9.4 Hospital.java<a class="headerlink" href="#hospital-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Hospital</span> <span class="p">{</span>
+    <span class="n">private</span> <span class="nb">int</span> <span class="nb">id</span><span class="p">;</span>
+    <span class="n">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="n">private</span> <span class="n">String</span> <span class="n">location</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getId</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">id</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setId</span><span class="p">(</span><span class="nb">int</span> <span class="nb">id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setName</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getLocation</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">location</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setLocation</span><span class="p">(</span><span class="n">String</span> <span class="n">location</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">public</span> <span class="n">Hospital</span><span class="p">(</span><span class="nb">int</span> <span class="nb">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">String</span> <span class="n">location</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nd">@Override</span>
+    <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&quot;Hospital{&quot;</span> <span class="o">+</span>
+                <span class="s2">&quot;id=&quot;</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span>
+                <span class="s2">&quot;, name=&#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="o">+</span>
+                <span class="s2">&quot;, location=&#39;&quot;</span> <span class="o">+</span> <span class="n">location</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="o">+</span>
+                <span class="s1">&#39;}&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collections-linked-list">
+<h2><strong>10. Collections | Linked list</strong><a class="headerlink" href="#collections-linked-list" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="links">
+<h2>10.1 Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOMlJzWlVsNUJUT0k">https://drive.google.com/open?id=0B5WQSHp6H2ZOMlJzWlVsNUJUT0k</a></p>
+</div>
+<div class="section" id="id1">
+<h2>10.2 Main Class<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">AppointmentHelper</span> <span class="n">app</span> <span class="o">=</span><span class="n">new</span> <span class="n">AppointmentHelper</span><span class="p">();</span>
+
+        <span class="n">app</span><span class="o">.</span><span class="n">CreateAppointment</span><span class="p">();</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">ReadAppointment</span><span class="p">();</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">UpdateAppointment</span><span class="p">();</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">DeleteAppointment</span><span class="p">();</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="appointmenthelper">
+<h2>10.3 AppointmentHelper<a class="headerlink" href="#appointmenthelper" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+
+<span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ListIterator</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">AppointmentHelper</span>  <span class="p">{</span>
+
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Appointment</span><span class="o">&gt;</span> <span class="n">appointments</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+
+    <span class="o">//</span><span class="n">Create</span> <span class="n">an</span> <span class="n">appointment</span> <span class="nb">list</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">CreateAppointment</span> <span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">Appointment</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Appointment</span><span class="p">(</span><span class="s2">&quot;Ally&quot;</span><span class="p">,</span><span class="mi">23</span><span class="p">);</span>
+        <span class="n">Appointment</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Appointment</span><span class="p">(</span><span class="s2">&quot;Sal&quot;</span><span class="p">,</span><span class="mi">21</span><span class="p">);</span>
+        <span class="n">Appointment</span> <span class="n">a3</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Appointment</span><span class="p">(</span><span class="s2">&quot;Murray&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">);</span>
+        <span class="n">Appointment</span> <span class="n">a4</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Appointment</span><span class="p">(</span><span class="s2">&quot;Joe&quot;</span><span class="p">,</span><span class="mi">89</span><span class="p">);</span>
+
+        <span class="n">appointments</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+        <span class="n">appointments</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span>
+        <span class="n">appointments</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a3</span><span class="p">);</span>
+        <span class="n">appointments</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a4</span><span class="p">);</span>
+<span class="o">//</span>        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;LinkedList content: &quot;</span> <span class="o">+</span> <span class="n">appointments</span><span class="p">);</span>
+
+
+    <span class="p">}</span>
+
+    <span class="o">//</span><span class="n">Read</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">elements</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">using</span> <span class="n">the</span> <span class="n">iterator</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">ReadAppointment</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;LinkedList content: </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">appointments</span><span class="o">.</span><span class="n">toString</span><span class="p">());</span>
+
+        <span class="n">ListIterator</span><span class="o">&lt;</span><span class="n">Appointment</span><span class="o">&gt;</span> <span class="n">appointmentListIterator</span> <span class="o">=</span> <span class="n">appointments</span><span class="o">.</span><span class="n">listIterator</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;All the appointments in the list are :&quot;</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">appointmentListIterator</span><span class="o">.</span><span class="n">hasNext</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">appointmentListIterator</span><span class="o">.</span><span class="n">next</span><span class="p">());</span>
+
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">UpdateAppointment</span> <span class="p">(){</span>
+        <span class="n">Appointment</span> <span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Appointment</span><span class="p">(</span><span class="s2">&quot;andy&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">);</span>
+        <span class="n">appointments</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+
+        <span class="n">ListIterator</span><span class="o">&lt;</span><span class="n">Appointment</span><span class="o">&gt;</span> <span class="n">appointmentListIterator</span> <span class="o">=</span> <span class="n">appointments</span><span class="o">.</span><span class="n">listIterator</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Before after updation in the list are :&quot;</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">appointmentListIterator</span><span class="o">.</span><span class="n">hasNext</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">appointmentListIterator</span><span class="o">.</span><span class="n">next</span><span class="p">());</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+    <span class="o">//</span><span class="n">Delete</span> <span class="n">an</span> <span class="n">appointment</span> <span class="n">at</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">index</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">DeleteAppointment</span><span class="p">(){</span>
+
+        <span class="n">appointments</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Elements in the list after deleting are :&quot;</span><span class="p">);</span>
+
+        <span class="n">ListIterator</span><span class="o">&lt;</span><span class="n">Appointment</span><span class="o">&gt;</span> <span class="n">appointmentListIterator</span> <span class="o">=</span> <span class="n">appointments</span><span class="o">.</span><span class="n">listIterator</span><span class="p">();</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">appointmentListIterator</span><span class="o">.</span><span class="n">hasNext</span><span class="p">()){</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span> <span class="n">appointmentListIterator</span><span class="o">.</span><span class="n">next</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="appointment-java">
+<h2>10.4 Appointment.java<a class="headerlink" href="#appointment-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+
+
+<span class="kn">import</span> <span class="nn">java.util.Objects</span><span class="p">;</span>
+
+
+
+<span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">6</span><span class="o">/</span><span class="mi">16</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Appointment</span> <span class="p">{</span>
+
+    <span class="n">private</span> <span class="n">String</span> <span class="n">patientName</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">pId</span><span class="p">;</span>
+
+
+
+    <span class="n">public</span> <span class="n">Appointment</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">patientName</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">pId</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">Appointment</span><span class="p">(</span><span class="n">String</span> <span class="n">patientName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">pId</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">patientName</span> <span class="o">=</span> <span class="n">patientName</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">pId</span> <span class="o">=</span> <span class="n">pId</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getPatientName</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">patientName</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setPatientName</span><span class="p">(</span><span class="n">String</span> <span class="n">patientName</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">patientName</span> <span class="o">=</span> <span class="n">patientName</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getpId</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">pId</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setpId</span><span class="p">(</span><span class="nb">int</span> <span class="n">appointmentNumber</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">pId</span> <span class="o">=</span> <span class="n">appointmentNumber</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="s2">&quot;Appointment{&quot;</span> <span class="o">+</span>
+
+                <span class="s2">&quot;patientName=&#39;&quot;</span> <span class="o">+</span> <span class="n">patientName</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="o">+</span>
+
+                <span class="s2">&quot;, pId=&quot;</span> <span class="o">+</span> <span class="n">pId</span> <span class="o">+</span>
+
+                <span class="s1">&#39;}&#39;</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="n">boolean</span> <span class="n">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">this</span> <span class="o">==</span> <span class="n">o</span><span class="p">)</span> <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">o</span> <span class="o">==</span> <span class="n">null</span> <span class="o">||</span> <span class="n">getClass</span><span class="p">()</span> <span class="o">!=</span> <span class="n">o</span><span class="o">.</span><span class="n">getClass</span><span class="p">())</span> <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+
+
+
+        <span class="n">Appointment</span> <span class="n">that</span> <span class="o">=</span> <span class="p">(</span><span class="n">Appointment</span><span class="p">)</span> <span class="n">o</span><span class="p">;</span>
+
+
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">pId</span> <span class="o">!=</span> <span class="n">that</span><span class="o">.</span><span class="n">pId</span><span class="p">)</span> <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">Objects</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">patientName</span><span class="p">,</span><span class="n">pId</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="nd">@Override</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">hashCode</span><span class="p">()</span> <span class="p">{</span>
+
+
+
+        <span class="k">return</span> <span class="n">Objects</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">patientName</span><span class="p">,</span><span class="n">pId</span>  <span class="p">);</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collections-stacks-queues">
+<h2><strong>11. Collections | Stacks &amp; queues</strong><a class="headerlink" href="#collections-stacks-queues" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pdf-link">
+<h2>11.1 Pdf link<a class="headerlink" href="#pdf-link" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZONzI1amtLR193UUk">https://drive.google.com/open?id=0B5WQSHp6H2ZONzI1amtLR193UUk</a></p>
+</div>
+<div class="section" id="id2">
+<h2>11.2 Main Class<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">5</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span>
+
+<span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">Stacks</span> <span class="n">stacks</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ArrayStack</span><span class="p">();</span>
+
+
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+
+
+
+        <span class="o">//</span><span class="n">TODO</span> <span class="n">refractor</span> <span class="n">this</span> <span class="n">method</span> <span class="n">later</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">stacks</span><span class="p">);</span>
+
+<span class="o">//</span>        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">Returns</span> <span class="n">a</span> <span class="n">ResultSet</span> <span class="nb">object</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">stacks</span><span class="o">.</span><span class="n">pop</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">stacks</span><span class="o">.</span><span class="n">pop</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">stacks</span><span class="o">.</span><span class="n">peek</span><span class="p">());;</span>
+
+        <span class="n">stacks</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">888</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">stacks</span><span class="p">);</span>
+
+
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getHello</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">hello</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setHello</span><span class="p">(</span><span class="n">String</span> <span class="n">hello</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">hello</span> <span class="o">=</span> <span class="n">hello</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">hello</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stacks-java">
+<h2>11.3 Stacks.java<a class="headerlink" href="#stacks-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">5</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*</span> <span class="n">Stacks</span> <span class="o">=</span> <span class="n">LIFO</span>
+
+<span class="o">*</span> <span class="n">eg</span><span class="p">:</span> <span class="n">stack</span> <span class="n">of</span> <span class="n">plates</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="n">interface</span> <span class="n">Stacks</span> <span class="p">{</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">push</span><span class="p">(</span><span class="n">Integer</span> <span class="n">data</span><span class="p">);</span>
+
+    <span class="n">public</span> <span class="n">Integer</span> <span class="n">pop</span><span class="p">();</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getSize</span><span class="p">();</span>
+
+    <span class="n">public</span> <span class="n">boolean</span> <span class="n">isEmpty</span><span class="p">();</span>
+
+    <span class="n">public</span> <span class="n">Integer</span> <span class="n">peek</span><span class="p">();</span>
+
+
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="arraystack-java">
+<h2>11.4 ArrayStack.java<a class="headerlink" href="#arraystack-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/**</span>
+
+<span class="o">*</span> <span class="n">Created</span> <span class="n">by</span> <span class="n">joy</span> <span class="n">on</span> <span class="mi">5</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mf">17.</span>
+
+<span class="o">*/</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ArrayStack</span> <span class="n">implements</span> <span class="n">Stacks</span><span class="p">{</span>
+
+    <span class="n">private</span> <span class="nb">int</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">top</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">size</span><span class="p">;</span>
+
+
+
+    <span class="n">public</span> <span class="n">ArrayStack</span><span class="p">(</span><span class="nb">int</span> <span class="n">size</span><span class="p">){</span>
+
+        <span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
+
+
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">ArrayStack</span><span class="p">(){</span>
+
+        <span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+
+
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">push</span><span class="p">(</span><span class="n">Integer</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="n">array</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+
+            <span class="n">reSize</span><span class="p">();</span>
+
+        <span class="n">top</span> <span class="o">=</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="n">array</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+
+        <span class="n">size</span> <span class="o">++</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+
+
+    <span class="n">public</span> <span class="n">Integer</span> <span class="n">pop</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span>
+
+            <span class="k">return</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="nb">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">top</span><span class="p">];</span>
+
+        <span class="n">top</span> <span class="o">=</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="n">size</span> <span class="o">--</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getSize</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">size</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">boolean</span> <span class="n">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+
+            <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">else</span>
+
+        <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">Integer</span> <span class="n">peek</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="k">else</span>
+
+            <span class="k">return</span> <span class="n">array</span><span class="p">[</span><span class="n">top</span><span class="p">];</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">reSize</span><span class="p">(){</span>
+
+    <span class="nb">int</span> <span class="p">[]</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[</span><span class="n">array</span><span class="o">.</span><span class="n">length</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+        <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+    <span class="p">}</span>
+
+        <span class="n">array</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">(){</span>
+
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">top</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../crud/index.html" class="btn btn-neutral float-right" title="CRUDs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Collections &amp; Generics-1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, readTheDoccs
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Testing &amp; Logging &mdash; code-java  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Design Patterns" href="../designPatterns/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> code-java
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dayOne/dayOne.html"><strong>Basic se bhi besic</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designPatterns/index.html"><strong>Design Patterns</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Testing &amp; Logging</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#exceptions-class-hierarchy-and-exception-handling-using-try-catch-block-finally-try-with-resources">01. Exceptions , Class Hierarchy and Exception Handling, Using try-catch block,finally Try-With-Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-exception"><strong>02. Custom Exception</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flow">2.1 Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-class">2.2 Main class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customexception-java">2.3 CustomException.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit-testing-junit4">03. Unit Testing , Junit4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#log4j">04. Log4j*</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">4.1 Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.2 Main Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pom-xml">4.3 pom.xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#log4j2-xml">4.4 log4j2.xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calculator-java">4.5 Calculator.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logger"><strong>5. Logger</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#link">5.1 Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">5.2 Main class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loga-java">5.3 logA.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logb-java">5.4 logB.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logc-java">5.5 logC.java</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">code-java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>Testing &amp; Logging</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/javadocs/testLoging/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="testing-logging">
+<h1><strong>Testing &amp; Logging</strong><a class="headerlink" href="#testing-logging" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exceptions-class-hierarchy-and-exception-handling-using-try-catch-block-finally-try-with-resources">
+<h2>01. Exceptions , Class Hierarchy and Exception Handling, Using try-catch block,finally Try-With-Resources<a class="headerlink" href="#exceptions-class-hierarchy-and-exception-handling-using-try-catch-block-finally-try-with-resources" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOa1JZenFaNWpUVHc">https://drive.google.com/open?id=0B5WQSHp6H2ZOa1JZenFaNWpUVHc</a></p>
+</div>
+<div class="section" id="custom-exception">
+<h2><strong>02. Custom Exception</strong><a class="headerlink" href="#custom-exception" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="flow">
+<h2>2.1 Flow<a class="headerlink" href="#flow" title="Permalink to this headline">¶</a></h2>
+<p>link : <a class="reference external" href="https://bitbucket_datreon&#64;bitbucket.org/datreon/custom-exception.git">https://bitbucket_datreon&#64;bitbucket.org/datreon/custom-exception.git</a></p>
+</div>
+<div class="section" id="main-class">
+<h2>2.2 Main class<a class="headerlink" href="#main-class" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">String</span> <span class="n">situation</span>   <span class="o">=</span> <span class="s2">&quot;unknown Case&quot;</span> <span class="p">;</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">situation</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;its empty&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">situation</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="s2">&quot;unknown Case&quot;</span><span class="p">))</span> <span class="p">{</span>
+
+                <span class="n">throw</span><span class="p">(</span> <span class="n">new</span> <span class="n">CustomException</span><span class="p">());</span>
+
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">CustomException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customexception-java">
+<h2>2.3 CustomException.java<a class="headerlink" href="#customexception-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">CustomException</span> <span class="n">extends</span> <span class="ne">Exception</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">final</span> <span class="n">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1234</span><span class="n">L</span><span class="p">;</span>
+    <span class="n">public</span> <span class="n">CustomException</span><span class="p">(){</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;this is custom exception being tackled &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="unit-testing-junit4">
+<h2>03. Unit Testing , Junit4<a class="headerlink" href="#unit-testing-junit4" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOSnRROTc4ZWJYQjQ">https://drive.google.com/open?id=0B5WQSHp6H2ZOSnRROTc4ZWJYQjQ</a></p>
+</div>
+<div class="section" id="log4j">
+<h2>04. Log4j*<a class="headerlink" href="#log4j" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id1">
+<h2>4.1 Flow<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Link : <a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOdWVsMVYtaHZSbTA">https://drive.google.com/open?id=0B5WQSHp6H2ZOdWVsMVYtaHZSbTA</a></p>
+</div>
+<div class="section" id="id2">
+<h2>4.2 Main Class<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Calculator</span> <span class="n">calculator</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Calculator</span><span class="p">();</span>
+
+        <span class="n">calculator</span><span class="o">.</span><span class="n">inputNumbers</span><span class="p">();</span>
+
+        <span class="nb">int</span> <span class="n">addAns</span> <span class="o">=</span> <span class="n">calculator</span><span class="o">.</span><span class="n">add</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">addAns</span><span class="p">);</span>
+
+        <span class="nb">int</span> <span class="n">subtractAns</span> <span class="o">=</span> <span class="n">calculator</span><span class="o">.</span><span class="n">subtract</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">subtractAns</span><span class="p">);</span>
+
+        <span class="nb">int</span> <span class="n">multiplyAns</span> <span class="o">=</span> <span class="n">calculator</span><span class="o">.</span><span class="n">multiply</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">multiplyAns</span><span class="p">);</span>
+
+        <span class="nb">int</span> <span class="n">divideAns</span> <span class="o">=</span> <span class="n">calculator</span><span class="o">.</span><span class="n">divide</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">divideAns</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pom-xml">
+<h2>4.3 pom.xml<a class="headerlink" href="#pom-xml" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+        xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com&lt;/groupId&gt;
+    &lt;artifactId&gt;calculatorWithLogging&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+            &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
+            &lt;version&gt;2.7&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+            &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;
+            &lt;version&gt;2.7&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+
+&lt;/project&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="log4j2-xml">
+<h2>4.4 log4j2.xml<a class="headerlink" href="#log4j2-xml" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+    &lt;param name=&quot;ConversionPattern&quot; value=&quot;&quot;/&gt;
+    &lt;appenders&gt;
+        &lt;Console name=&quot;Console&quot; target=&quot;SYSTEM_OUT&quot;&gt;
+            &lt;PatternLayout pattern=&quot;\t%d{HH:mm:ss.SSS} %-5p - [%-m] - at %c.%M(%F:%L)%n &quot;/&gt;
+        &lt;/Console&gt;
+
+        &lt;File name=&quot;LogFile&quot; fileName=&quot;logs/app.log&quot;&gt;
+            &lt;PatternLayout pattern=&quot;%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&quot;/&gt;
+        &lt;/File&gt;
+    &lt;/appenders&gt;
+
+    &lt;loggers&gt;
+        &lt;root level=&quot;trace&quot;&gt;
+            &lt;appender-ref ref=&quot;Console&quot; /&gt;
+            &lt;appender-ref ref=&quot;LogFile&quot; /&gt;
+        &lt;/root&gt;
+    &lt;/loggers&gt;
+&lt;/configuration&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="calculator-java">
+<h2>4.5 Calculator.java<a class="headerlink" href="#calculator-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">org.apache.logging.log4j.LogManager</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.logging.log4j.Logger</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Calculator</span> <span class="p">{</span>
+
+    <span class="n">private</span> <span class="n">static</span> <span class="n">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LogManager</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">Calculator</span><span class="o">.</span><span class="n">class</span><span class="p">);</span>
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">,</span><span class="n">choice</span><span class="p">;</span>
+    <span class="n">private</span> <span class="n">double</span> <span class="n">answer</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">Calculator</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">num1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">num2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">choice</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">LOG</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Calculator Initialized num1 = </span><span class="si">{}</span><span class="s2"> num2 = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getNum1</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setNum1</span><span class="p">(</span><span class="nb">int</span> <span class="n">num1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">num1</span> <span class="o">=</span> <span class="n">num1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getNum2</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setNum2</span><span class="p">(</span><span class="nb">int</span> <span class="n">num2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">num2</span> <span class="o">=</span> <span class="n">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getChoice</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">choice</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setChoice</span><span class="p">(</span><span class="nb">int</span> <span class="n">choice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">choice</span> <span class="o">=</span> <span class="n">choice</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">inputNumbers</span><span class="p">(){</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Enter number1 : &quot;</span><span class="p">);</span>
+        <span class="n">Scanner</span> <span class="n">inputNum1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+        <span class="n">num1</span> <span class="o">=</span> <span class="n">inputNum1</span><span class="o">.</span><span class="n">nextInt</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Enter number2 : &quot;</span><span class="p">);</span>
+        <span class="n">Scanner</span> <span class="n">inputNum2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+        <span class="n">num2</span> <span class="o">=</span> <span class="n">inputNum2</span><span class="o">.</span><span class="n">nextInt</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">add</span><span class="p">(){</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Add method Called&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">num1</span><span class="o">+</span><span class="n">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">subtract</span><span class="p">(){</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Subtract method Called&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">num1</span><span class="o">-</span><span class="n">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">divide</span><span class="p">(){</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Divide method Called&quot;</span><span class="p">);</span>
+
+        <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">num1</span><span class="o">/</span><span class="n">num2</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">e</span><span class="p">){</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Divide by zero = &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="n">toString</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">multiply</span><span class="p">(){</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Multiply method Called&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">num1</span><span class="o">*</span><span class="n">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logger">
+<h2><strong>5. Logger</strong><a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="link">
+<h2>5.1 Link<a class="headerlink" href="#link" title="Permalink to this headline">¶</a></h2>
+<p>link : <a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOSm85emNXOERjUEU">https://drive.google.com/open?id=0B5WQSHp6H2ZOSm85emNXOERjUEU</a></p>
+</div>
+<div class="section" id="id3">
+<h2>5.2 Main class<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+
+            <span class="o">//</span><span class="n">objects</span>
+            <span class="n">logA</span> <span class="n">A</span> <span class="o">=</span> <span class="n">new</span> <span class="n">logA</span><span class="p">();</span>
+            <span class="n">logB</span> <span class="n">B</span> <span class="o">=</span> <span class="n">new</span> <span class="n">logB</span><span class="p">();</span>
+            <span class="n">logC</span> <span class="n">C</span> <span class="o">=</span> <span class="n">new</span> <span class="n">logC</span><span class="p">();</span>
+
+<span class="o">//</span>        <span class="n">loggerMain</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Level</span><span class="o">.</span><span class="n">INFO</span> <span class="p">,</span><span class="s2">&quot;this is a test &quot;</span><span class="p">);</span>
+            <span class="n">A</span><span class="o">.</span><span class="n">printA</span><span class="p">();</span>
+
+            <span class="n">B</span><span class="o">.</span><span class="n">printB</span><span class="p">();</span>
+
+            <span class="n">C</span><span class="o">.</span><span class="n">printC</span><span class="p">();</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loga-java">
+<h2>5.3 logA.java<a class="headerlink" href="#loga-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.FileHandler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.Handler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.Level</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="p">;</span>
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">logA</span>  <span class="p">{</span>
+    <span class="n">private</span>  <span class="n">static</span>  <span class="n">Handler</span> <span class="n">fileHandler</span>  <span class="p">;</span>
+    <span class="n">private</span> <span class="n">final</span> <span class="n">Logger</span> <span class="n">loggerA</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">logA</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">getName</span><span class="p">());</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">printA</span><span class="p">(){</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">fileHandler</span> <span class="o">=</span> <span class="n">new</span> <span class="n">FileHandler</span><span class="p">(</span><span class="s2">&quot;/home/div/log.txt&quot;</span><span class="p">);</span>
+            <span class="n">loggerA</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fileHandler</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;log A&quot;</span><span class="p">);</span>
+        <span class="o">//</span><span class="n">Logging</span> <span class="n">A</span>
+        <span class="n">loggerA</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Level</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;logger class A&quot;</span><span class="p">);</span>
+<span class="o">//</span>        <span class="n">loggerA</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;logger Class A&quot;</span><span class="p">);</span>
+        <span class="p">}</span><span class="n">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">){</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logb-java">
+<h2>5.4 logB.java<a class="headerlink" href="#logb-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="p">;</span>
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">logB</span> <span class="p">{</span>
+
+
+    <span class="n">private</span> <span class="n">final</span> <span class="n">Logger</span> <span class="n">loggerB</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;logB&quot;</span><span class="p">);</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">printB</span><span class="p">(){</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;log B&quot;</span><span class="p">);</span>
+        <span class="o">//</span><span class="n">Logging</span> <span class="n">B</span>
+        <span class="n">loggerB</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;logger Class B&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logc-java">
+<h2>5.5 logC.java<a class="headerlink" href="#logc-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.logging.ConsoleHandler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">logC</span> <span class="p">{</span>
+
+<span class="o">//</span>    <span class="n">private</span>  <span class="n">static</span> <span class="n">ConsoleHandler</span> <span class="n">consoleHandler</span> <span class="p">;</span>
+    <span class="n">private</span> <span class="n">final</span> <span class="n">Logger</span> <span class="n">loggerC</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">logC</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">getName</span><span class="p">());</span>
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">printC</span><span class="p">(){</span>
+
+<span class="o">//</span>        <span class="n">loggerC</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">new</span> <span class="n">ConsoleHandler</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;log C&quot;</span><span class="p">);</span>
+        <span class="o">//</span><span class="n">Logging</span> <span class="n">C</span>
+        <span class="n">loggerC</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;logger Class C&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../designPatterns/index.html" class="btn btn-neutral float-left" title="Design Patterns" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, readTheDoccs
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

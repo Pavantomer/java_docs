@@ -1,0 +1,1010 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CRUDs &mdash; code-java  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Collections &amp; Generics-2" href="../collectionsGenerics/index2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> code-java
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dayOne/dayOne.html"><strong>Basic se bhi besic</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designPatterns/index.html"><strong>Design Patterns</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testLoging/index.html"><strong>Testing &amp; Logging</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serde/index.html"><strong>Serialization and Deserialization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collectionsGenerics/index.html"><strong>Collections &amp; Generics-1</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collectionsGenerics/index2.html"><strong>Collections &amp; Generics-2</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>CRUDs</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-io-code">01. File IO code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flow">1.1 Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-class">1.2 Main Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crud-fileio-class">1.3 CRUD_FileIO Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filepath-class">1.4 FilePath class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jdbc-code">02. JDBC Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pom-xml">2.1 pom.xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2.2 Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.3 Main Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connectionjdbc-java">2.4 ConnectionJdbc.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crudjdbcwithstatement-java">2.5 CrudJdbcWithStatement.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mongodb">03. Mongodb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#link">3.1 Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependency">3.2 Dependency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connection-uri">3.3 Connection URI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#minio-crud">04. Minio Crud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mail-api">05 Mail Api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sshj">06 Sshj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thumbnailator">07 Thumbnailator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jsoup">08 Jsoup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xml-parsingbook">09 Xml ParsingBook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#json-parsingbook">10. Json ParsingBook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#csv-parsingbook">11. Csv ParsingBook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jndi-crudbook">12. Jndi CRUDBook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pdf-crudbook">13. Pdf CrudBook</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">code-java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>CRUDs</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/javadocs/crud/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cruds">
+<h1><strong>CRUDs</strong><a class="headerlink" href="#cruds" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="file-io-code">
+<h2>01. File IO code<a class="headerlink" href="#file-io-code" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="flow">
+<h2>1.1 Flow<a class="headerlink" href="#flow" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOQUdwNEh6eDlWR0U">https://drive.google.com/open?id=0B5WQSHp6H2ZOQUdwNEh6eDlWR0U</a></p>
+<p>Clone code from repo</p>
+<p>$  <a class="reference external" href="https://bitbucket_datreon&#64;bitbucket.org/datreon/file-io.git">https://bitbucket_datreon&#64;bitbucket.org/datreon/file-io.git</a></p>
+</div>
+<div class="section" id="main-class">
+<h2>1.2 Main Class<a class="headerlink" href="#main-class" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+
+
+
+        <span class="n">CRUD_FileIO</span> <span class="n">CRUDFileIO</span> <span class="o">=</span> <span class="n">new</span> <span class="n">CRUD_FileIO</span><span class="p">();</span>
+
+        <span class="n">CRUDFileIO</span><span class="o">.</span><span class="n">creatingFile</span><span class="p">();</span>
+
+        <span class="n">CRUDFileIO</span><span class="o">.</span><span class="n">inputFilePath</span><span class="p">();</span>
+
+
+        <span class="n">CRUDFileIO</span><span class="o">.</span><span class="n">writingFile</span><span class="p">();</span>
+        <span class="n">CRUDFileIO</span><span class="o">.</span><span class="n">reading</span><span class="p">();</span>
+
+        <span class="n">CRUDFileIO</span><span class="o">.</span><span class="n">appendFile</span><span class="p">();</span>
+
+        <span class="o">//</span><span class="n">comment</span> <span class="n">this</span> <span class="n">line</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">deletion</span> <span class="n">after</span> <span class="n">creation</span>
+        <span class="n">CRUDFileIO</span><span class="o">.</span><span class="n">deleteFile</span><span class="p">();</span>
+
+<span class="o">//</span>        <span class="n">CRUDFileIO</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="s2">&quot;File IO &quot;</span><span class="p">);</span>
+<span class="o">//</span>        <span class="n">CRUDFileIO</span><span class="o">.</span><span class="n">setFilePath</span><span class="p">(</span><span class="s2">&quot;/home/datreon/sample.txt&quot;</span><span class="p">);</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="crud-fileio-class">
+<h2>1.3 CRUD_FileIO Class<a class="headerlink" href="#crud-fileio-class" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.</span><span class="o">*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.NoSuchFileException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">CRUD_FileIO</span> <span class="n">extends</span>  <span class="n">FilePath</span> <span class="p">{</span>
+
+    <span class="o">//</span><span class="n">private</span> <span class="n">String</span> <span class="n">filePath</span><span class="p">;</span>
+    <span class="n">private</span> <span class="n">String</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">private</span> <span class="n">boolean</span> <span class="n">check</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">CRUD_FileIO</span><span class="p">(){</span>
+        <span class="o">//</span><span class="n">filePath</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+        <span class="n">data</span>  <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+        <span class="n">check</span> <span class="o">=</span> <span class="n">Boolean</span><span class="o">.</span><span class="n">parseBoolean</span><span class="p">(</span><span class="n">null</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getData</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="n">data</span><span class="p">){</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="o">//</span><span class="n">create</span> <span class="n">new</span> <span class="n">file</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">creatingFile</span><span class="p">()</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+
+        <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="n">new</span> <span class="n">File</span><span class="p">(</span><span class="n">inputFilePath</span><span class="p">());</span>
+        <span class="n">boolean</span> <span class="n">check</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">createNewFile</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">check</span> <span class="o">==</span> <span class="n">true</span><span class="p">){</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;File is created!&quot;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;File already exists.&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+
+    <span class="o">//</span><span class="n">read</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">file</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">reading</span><span class="p">()</span> <span class="n">throws</span> <span class="n">IOException</span><span class="p">{</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">FileReader</span> <span class="n">fileReader</span> <span class="o">=</span> <span class="n">new</span> <span class="n">FileReader</span><span class="p">(</span><span class="n">outputFilePath</span><span class="p">());</span>
+            <span class="n">BufferedReader</span> <span class="n">bufferedReader</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">fileReader</span><span class="p">);</span>
+
+            <span class="n">String</span> <span class="n">line</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">bufferedReader</span><span class="o">.</span><span class="n">readLine</span><span class="p">())</span><span class="o">!=</span> <span class="n">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="n">bufferedReader</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
+
+        <span class="p">}</span>
+        <span class="n">catch</span> <span class="p">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="p">){</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+    <span class="o">/</span><span class="n">writing</span> <span class="n">to</span> <span class="n">file</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">writingFile</span><span class="p">()</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot; please enter the data to be written to file &quot;</span><span class="p">);</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+        <span class="n">Scanner</span> <span class="n">dataInput</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">dataInput</span><span class="o">.</span><span class="n">nextLine</span><span class="p">();</span>
+
+            <span class="n">FileWriter</span> <span class="n">fileWriter</span> <span class="o">=</span> <span class="n">new</span> <span class="n">FileWriter</span><span class="p">(</span><span class="n">outputFilePath</span><span class="p">());</span>
+
+            <span class="n">BufferedWriter</span> <span class="n">bufferedWriter</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BufferedWriter</span><span class="p">(</span><span class="n">fileWriter</span><span class="p">);</span>
+
+            <span class="n">bufferedWriter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+            <span class="n">bufferedWriter</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
+        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="o">//</span><span class="n">update</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">appendFile</span><span class="p">()</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+
+        <span class="o">//</span><span class="n">add</span> <span class="n">data</span> <span class="n">to</span> <span class="n">append</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Add the additional data : &quot;</span><span class="p">);</span>
+        <span class="n">Scanner</span> <span class="n">addData</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">additionalData</span> <span class="o">=</span> <span class="n">addData</span><span class="o">.</span><span class="n">nextLine</span><span class="p">();</span>
+
+        <span class="n">FileWriter</span> <span class="n">fileWriter1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">FileWriter</span><span class="p">(</span><span class="n">inputFilePath</span><span class="p">(),</span> <span class="n">true</span><span class="p">);</span>
+        <span class="n">BufferedWriter</span> <span class="n">bufferedWriter1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BufferedWriter</span><span class="p">(</span><span class="n">fileWriter1</span><span class="p">);</span>
+
+        <span class="n">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="n">new</span> <span class="n">PrintWriter</span><span class="p">(</span><span class="n">bufferedWriter1</span><span class="p">);</span>
+        <span class="n">pw</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">additionalData</span><span class="p">);</span>
+        <span class="n">pw</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Data successfully appended at the end of file&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+        <span class="n">public</span> <span class="n">void</span> <span class="n">deleteFile</span> <span class="p">()</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{;</span>
+
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="n">File</span> <span class="n">file</span> <span class="o">=</span><span class="n">new</span>  <span class="n">File</span><span class="p">(</span><span class="n">deleteFilePath</span><span class="p">());</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">delete</span><span class="p">();</span>
+                <span class="n">setOutputFilePath</span><span class="p">(</span><span class="s2">&quot;File Deleted Successfully &quot;</span><span class="p">);</span>
+
+            <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+            <span class="p">}</span>
+
+
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filepath-class">
+<h2>1.4 FilePath class<a class="headerlink" href="#filepath-class" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">FilePath</span> <span class="p">{</span>
+    <span class="n">private</span>  <span class="n">String</span> <span class="n">inputFilePath</span> <span class="p">;</span>
+    <span class="n">private</span>  <span class="n">String</span> <span class="n">outputFilePath</span><span class="p">;</span>
+    <span class="n">private</span>  <span class="n">String</span> <span class="n">deleteFilePath</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getInputFilePath</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">inputFilePath</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getOutputFilePath</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">outputFilePath</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setInputFilePath</span><span class="p">(</span><span class="n">String</span> <span class="n">inputFilePath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">inputFilePath</span> <span class="o">=</span> <span class="n">inputFilePath</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setOutputFilePath</span><span class="p">(</span><span class="n">String</span> <span class="n">outputFilePath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">outputFilePath</span> <span class="o">=</span> <span class="n">outputFilePath</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="n">public</span> <span class="n">String</span>  <span class="n">inputFilePath</span><span class="p">()</span>
+    <span class="p">{</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Enter path along with name of file you want to create : &quot;</span><span class="p">);</span>
+        <span class="n">Scanner</span> <span class="n">inputFileLocation</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+        <span class="n">inputFilePath</span> <span class="o">=</span> <span class="n">inputFileLocation</span><span class="o">.</span><span class="n">next</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">inputFilePath</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">outputFilePath</span><span class="p">()</span>
+    <span class="p">{</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Enter path along with name of file you want to read : &quot;</span><span class="p">);</span>
+        <span class="n">Scanner</span> <span class="n">outputFileLocation</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+        <span class="n">outputFilePath</span> <span class="o">=</span> <span class="n">outputFileLocation</span><span class="o">.</span><span class="n">next</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">outputFilePath</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">deleteFilePath</span><span class="p">()</span>
+    <span class="p">{</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Enter path along with name of file you want to delete : &quot;</span><span class="p">);</span>
+        <span class="n">Scanner</span> <span class="n">deleteFileLocation</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+        <span class="n">deleteFilePath</span> <span class="o">=</span> <span class="n">deleteFileLocation</span><span class="o">.</span><span class="n">next</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">deleteFilePath</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="jdbc-code">
+<h2>02. JDBC Code<a class="headerlink" href="#jdbc-code" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pom-xml">
+<h2>2.1 pom.xml<a class="headerlink" href="#pom-xml" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependencies</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+
+            <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">mysql</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+
+            <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">mysql</span><span class="o">-</span><span class="n">connector</span><span class="o">-</span><span class="n">java</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+
+            <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">6.0</span><span class="o">.</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;/</span><span class="n">dependencies</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>2.2 Flow<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Doc link :<a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOY1V5bURmQU9pcGM">https://drive.google.com/open?id=0B5WQSHp6H2ZOY1V5bURmQU9pcGM</a></p>
+<p>Docker run mysql statement :</p>
+<p>docker run –name mysqlTest -d -p 3306:3306 –env=”MYSQL_DATABASE=test” –env=”<a class="reference external" href="mailto:MYSQL_ROOT_PASSWORD=Qwerty&#37;&#52;&#48;321">MYSQL_ROOT_PASSWORD=Qwerty<span>&#64;</span>321</a>” –env=”MYSQL_USER=datreon”–env=”<a class="reference external" href="mailto:MYSQL_PASSWORD=Qwerty&#37;&#52;&#48;321">MYSQL_PASSWORD=Qwerty<span>&#64;</span>321</a>” mysql –bind_address=0.0.0.0</p>
+<p>Expose the port 3306 in virtual box over the nat network</p>
+<p>Clone the bitbucket repo</p>
+<p>$   <a class="reference external" href="https://bitbucket_datreon&#64;bitbucket.org/datreon/jdbc-crud.git">https://bitbucket_datreon&#64;bitbucket.org/datreon/jdbc-crud.git</a></p>
+</div>
+<div class="section" id="id2">
+<h2>2.3 Main Class<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.sql.SQLException</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="n">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+
+
+
+        <span class="n">CrudJdbcWithStatement</span> <span class="n">crudJdbcWithStatement</span> <span class="o">=</span> <span class="n">new</span> <span class="n">CrudJdbcWithStatement</span><span class="p">();</span>
+
+
+
+<span class="o">//</span>        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">setJdbcurl</span><span class="p">(</span><span class="s2">&quot;jdbc:mysql://192.168.100.44:3306/test&quot;</span><span class="p">);</span>
+
+<span class="o">//</span>        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">setUsername</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">);</span>
+
+<span class="o">//</span>        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">getUsername</span><span class="p">();</span>
+
+<span class="o">//</span>        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">setPassword</span><span class="p">(</span><span class="s2">&quot;Qwerty@321&quot;</span><span class="p">);</span>
+
+
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">enterConnectionDetails</span><span class="p">();</span>
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">makeConnection</span><span class="p">();</span>
+
+
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">setCreateTableSQL</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE  Users&quot;</span><span class="o">+</span>
+
+                <span class="s2">&quot;(&quot;</span> <span class="o">+</span>
+
+                <span class="s2">&quot;    id INT(11), &quot;</span> <span class="o">+</span>
+
+                <span class="s2">&quot;    name VARCHAR(255),&quot;</span> <span class="o">+</span>
+
+                <span class="s2">&quot;    age INT(11),&quot;</span> <span class="o">+</span>
+
+                <span class="s2">&quot;    email VARCHAR(255)&quot;</span> <span class="o">+</span>
+
+                <span class="s2">&quot;)&quot;</span> <span class="p">);</span>
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">createTable</span><span class="p">();</span>
+
+
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">insertRow</span><span class="p">();</span>
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">readTable</span><span class="p">();</span>
+
+
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">updateRow</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">);</span>
+
+
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">readTable</span><span class="p">();</span>
+
+        <span class="n">crudJdbcWithStatement</span><span class="o">.</span><span class="n">deleteRow</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="connectionjdbc-java">
+<h2>2.4 ConnectionJdbc.java<a class="headerlink" href="#connectionjdbc-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.sql.SQLException</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ConnectionJdbc</span> <span class="p">{</span>
+
+    <span class="n">private</span> <span class="n">String</span> <span class="n">userName</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="n">String</span> <span class="n">password</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="n">String</span> <span class="n">jdbcUrl</span><span class="p">;</span>
+
+
+
+    <span class="n">protected</span> <span class="n">Connection</span> <span class="n">currentconnection</span><span class="p">;</span>
+
+
+
+    <span class="n">public</span> <span class="n">ConnectionJdbc</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">userName</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">jdbcUrl</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">Connection</span> <span class="n">getCurrentconnection</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">currentconnection</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setCurrentconnection</span><span class="p">(</span><span class="n">Connection</span> <span class="n">currentconnection</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">currentconnection</span> <span class="o">=</span> <span class="n">currentconnection</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">ConnectionJdbc</span><span class="p">(</span><span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">currentconnection</span> <span class="o">=</span> <span class="n">connection</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+<span class="o">//</span><span class="n">GETTERS</span> <span class="n">AND</span> <span class="n">SETTERS</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getUsername</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">userName</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setUsername</span><span class="p">(</span><span class="n">String</span> <span class="n">username</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">userName</span> <span class="o">=</span> <span class="n">username</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getPassword</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">password</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setPassword</span><span class="p">(</span><span class="n">String</span> <span class="n">password</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">password</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getJdbcurl</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">jdbcUrl</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setJdbcurl</span><span class="p">(</span><span class="n">String</span> <span class="n">jdbcurl</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">jdbcUrl</span> <span class="o">=</span> <span class="n">jdbcurl</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+<span class="o">//</span><span class="n">Method</span> <span class="n">to</span> <span class="n">take</span> <span class="nb">input</span> <span class="kn">from</span> <span class="nn">user</span> <span class="n">regarding</span> <span class="n">url</span><span class="p">,</span><span class="n">passwd</span><span class="p">,</span><span class="ow">and</span> <span class="n">username</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">enterConnectionDetails</span><span class="p">(){</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Enter jdbc url : &quot;</span><span class="p">);</span>
+
+        <span class="n">Scanner</span> <span class="n">url</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+
+        <span class="n">jdbcUrl</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">next</span><span class="p">();</span>
+
+
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Enter username : &quot;</span><span class="p">);</span>
+
+        <span class="n">Scanner</span> <span class="n">name</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+
+        <span class="n">userName</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">next</span><span class="p">();</span>
+
+
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Enter password : &quot;</span><span class="p">);</span>
+
+        <span class="n">Scanner</span> <span class="n">passwd</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+
+        <span class="n">password</span> <span class="o">=</span> <span class="n">passwd</span><span class="o">.</span><span class="n">next</span><span class="p">();</span>
+
+    <span class="p">}</span>
+
+<span class="o">//</span><span class="n">create</span> <span class="n">connection</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">makeConnection</span><span class="p">(){</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+
+            <span class="n">currentconnection</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="n">getConnection</span><span class="p">(</span><span class="n">jdbcUrl</span><span class="p">,</span> <span class="n">userName</span><span class="p">,</span> <span class="n">password</span><span class="p">);</span>
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Successfully connected&quot;</span><span class="p">);</span>
+
+        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="crudjdbcwithstatement-java">
+<h2>2.5 CrudJdbcWithStatement.java<a class="headerlink" href="#crudjdbcwithstatement-java" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.sql.</span><span class="o">*</span><span class="p">;</span>
+
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">CrudJdbcWithStatement</span> <span class="n">extends</span> <span class="n">ConnectionJdbc</span> <span class="p">{</span>
+
+
+
+    <span class="n">private</span> <span class="n">String</span> <span class="n">createTableQuery</span><span class="p">,</span><span class="n">email</span><span class="p">,</span><span class="n">name</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="n">Statement</span> <span class="n">statement</span><span class="p">;</span>
+
+    <span class="n">private</span> <span class="nb">int</span> <span class="nb">id</span><span class="p">,</span><span class="n">age</span><span class="p">;</span>
+
+
+
+
+
+    <span class="n">public</span> <span class="n">CrudJdbcWithStatement</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">createTableQuery</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getCreateTableSQL</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">createTableQuery</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setCreateTableSQL</span><span class="p">(</span><span class="n">String</span> <span class="n">createTableSQL</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="o">.</span><span class="n">createTableQuery</span> <span class="o">=</span> <span class="n">createTableSQL</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="o">//</span> <span class="n">Create</span> <span class="n">table</span> <span class="n">method</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">createTable</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+
+            <span class="n">statement</span> <span class="o">=</span> <span class="n">currentconnection</span><span class="o">.</span><span class="n">createStatement</span><span class="p">();</span>
+
+            <span class="n">statement</span><span class="o">.</span><span class="n">executeUpdate</span><span class="p">(</span><span class="n">createTableQuery</span><span class="p">);</span>
+
+
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Table Created Successfully&quot;</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="n">catch</span> <span class="p">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Table Already exist&quot;</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="o">//</span><span class="n">Insert</span> <span class="n">a</span> <span class="n">row</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">insertRow</span><span class="p">(){</span>
+
+
+
+        <span class="k">try</span> <span class="p">{</span>
+
+            <span class="n">statement</span>  <span class="o">=</span> <span class="n">currentconnection</span><span class="o">.</span><span class="n">createStatement</span><span class="p">();</span>
+
+            <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span>    <span class="s2">&quot;INSERT INTO Users&quot;</span>
+
+                    <span class="o">+</span> <span class="s2">&quot;(id, name, age, email) &quot;</span> <span class="o">+</span> <span class="s2">&quot;VALUES&quot;</span>
+
+                    <span class="o">+</span> <span class="s2">&quot;(1,&#39;luna&#39;,23,&#39;lhog@gmail.com&#39;)&quot;</span><span class="p">;</span>
+
+            <span class="n">statement</span><span class="o">.</span><span class="n">executeUpdate</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+
+
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Rows inserted&quot;</span><span class="p">);</span>
+
+        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="o">//</span><span class="n">Read</span> <span class="n">Table</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">readTable</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Reading Table Data&quot;</span><span class="p">);</span>
+
+            <span class="n">statement</span> <span class="o">=</span> <span class="n">currentconnection</span><span class="o">.</span><span class="n">createStatement</span><span class="p">();</span>
+
+            <span class="n">ResultSet</span> <span class="n">resultSet</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="n">executeQuery</span><span class="p">(</span><span class="s2">&quot;select * from Users&quot;</span><span class="p">);</span>
+
+
+
+            <span class="k">while</span> <span class="p">(</span><span class="n">resultSet</span><span class="o">.</span><span class="n">next</span><span class="p">())</span> <span class="p">{</span>
+
+
+
+                <span class="nb">id</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="n">getInt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+                <span class="n">name</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="n">getString</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+                <span class="n">age</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="n">getInt</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+                <span class="n">email</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="n">getString</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+
+
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Id = &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="o">.</span><span class="n">valueOf</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; name = &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; age = &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="o">.</span><span class="n">valueOf</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span>
+
+                        <span class="s2">&quot; email = &quot;</span> <span class="o">+</span> <span class="n">email</span><span class="p">);</span>
+
+            <span class="p">}</span>
+
+        <span class="p">}</span>
+
+        <span class="n">catch</span> <span class="p">(</span><span class="n">SQLException</span> <span class="o">|</span> <span class="n">NullPointerException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="o">//</span><span class="n">Delete</span> <span class="n">a</span> <span class="n">table</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">deleteRow</span><span class="p">(</span><span class="nb">int</span> <span class="nb">id</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+
+            <span class="n">statement</span> <span class="o">=</span> <span class="n">currentconnection</span><span class="o">.</span><span class="n">createStatement</span><span class="p">();</span>
+
+
+
+            <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM Users&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;WHERE id = &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="o">.</span><span class="n">valueOf</span><span class="p">(</span><span class="nb">id</span><span class="p">);</span>
+
+
+
+            <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="n">executeUpdate</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+
+
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Rows deleted = &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="n">catch</span> <span class="p">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+    <span class="o">//</span><span class="n">Update</span> <span class="n">a</span> <span class="n">row</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">updateRow</span><span class="p">(</span><span class="nb">int</span> <span class="nb">id</span><span class="p">,</span> <span class="nb">int</span> <span class="n">updatedAge</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+
+            <span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">currentconnection</span><span class="o">.</span><span class="n">createStatement</span><span class="p">();</span>
+
+
+
+            <span class="nb">int</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="n">executeUpdate</span><span class="p">(</span><span class="s2">&quot;Update Users&quot;</span> <span class="o">+</span> <span class="s2">&quot; set age=&quot;</span> <span class="o">+</span> <span class="n">updatedAge</span> <span class="o">+</span> <span class="s2">&quot; where id=&quot;</span> <span class="o">+</span> <span class="nb">id</span><span class="p">);</span>
+
+
+
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Rows updated = &quot;</span> <span class="o">+</span> <span class="n">rows</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="n">catch</span> <span class="p">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mongodb">
+<h2>03. Mongodb<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="link">
+<h2>3.1 Link<a class="headerlink" href="#link" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><a class="reference external" href="https://jalmeen&#64;bitbucket.org/jalmeen/mongocrud.git">https://jalmeen&#64;bitbucket.org/jalmeen/mongocrud.git</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="dependency">
+<h2>3.2 Dependency<a class="headerlink" href="#dependency" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mongodb&lt;/groupId&gt;
+    &lt;artifactId&gt;mongodb-driver&lt;/artifactId&gt;
+    &lt;version&gt;3.4.2&lt;/version&gt;
+&lt;/dependency&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="connection-uri">
+<h2>3.3 Connection URI<a class="headerlink" href="#connection-uri" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">format</span> <span class="n">of</span> <span class="n">the</span> <span class="n">URI</span> <span class="ow">is</span><span class="p">:</span>
+
+<span class="n">MongoClientURI</span> <span class="n">uri</span>  <span class="o">=</span> <span class="n">new</span> <span class="n">MongoClientURI</span><span class="p">(</span><span class="s2">&quot;mongodb://user:pass@host:port/db&quot;</span><span class="p">);</span>
+        <span class="n">MongoClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">uri</span><span class="p">);</span>
+        <span class="n">MongoDatabase</span> <span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">getDatabase</span><span class="p">(</span><span class="n">uri</span><span class="o">.</span><span class="n">getDatabase</span><span class="p">());</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="minio-crud">
+<h2>04. Minio Crud<a class="headerlink" href="#minio-crud" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://jalmeen&#64;bitbucket.org/jalmeen/minio.git">https://jalmeen&#64;bitbucket.org/jalmeen/minio.git</a></p>
+</div>
+<div class="section" id="mail-api">
+<h2>05 Mail Api<a class="headerlink" href="#mail-api" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://jalmeen&#64;bitbucket.org/docdatreon/javamailapi.git">https://jalmeen&#64;bitbucket.org/docdatreon/javamailapi.git</a></p>
+</div>
+<div class="section" id="sshj">
+<h2>06 Sshj<a class="headerlink" href="#sshj" title="Permalink to this headline">¶</a></h2>
+<p>work flow…</p>
+<p><a class="reference external" href="https://jalmeen&#64;bitbucket.org/jalmeen/sshjcode.git">https://jalmeen&#64;bitbucket.org/jalmeen/sshjcode.git</a></p>
+</div>
+<div class="section" id="thumbnailator">
+<h2>07 Thumbnailator<a class="headerlink" href="#thumbnailator" title="Permalink to this headline">¶</a></h2>
+<p>Codeflow…</p>
+<p><a class="reference external" href="https://jalmeen&#64;bitbucket.org/jalmeen/thumbnailator.git">https://jalmeen&#64;bitbucket.org/jalmeen/thumbnailator.git</a></p>
+</div>
+<div class="section" id="jsoup">
+<h2>08 Jsoup<a class="headerlink" href="#jsoup" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="xml-parsingbook">
+<h2>09 Xml ParsingBook<a class="headerlink" href="#xml-parsingbook" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="json-parsingbook">
+<h2>10. Json ParsingBook<a class="headerlink" href="#json-parsingbook" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="csv-parsingbook">
+<h2>11. Csv ParsingBook<a class="headerlink" href="#csv-parsingbook" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="jndi-crudbook">
+<h2>12. Jndi CRUDBook<a class="headerlink" href="#jndi-crudbook" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pdf-crudbook">
+<h2>13. Pdf CrudBook<a class="headerlink" href="#pdf-crudbook" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../collectionsGenerics/index2.html" class="btn btn-neutral float-left" title="Collections &amp; Generics-2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, readTheDoccs
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

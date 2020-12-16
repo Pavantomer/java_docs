@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic se bhi besic &mdash; code-java  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Design Patterns" href="../designPatterns/index.html" />
+    <link rel="prev" title="Welcome to code-java’s documentation!" href="../../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> code-java
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Basic se bhi besic</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#topics">Topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-java-history-of-java-java-principles-and-components-memory-management">01. What is Java? , History of Java, Java Principles and Components , Memory management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#o2-verview">O2. verview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#program-structure-process-flow-intellij-essentials">03. Program Structure &amp; process flow &amp; Intellij Essentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-sdk-project-level-languagepage">04. Setting up SDK &amp; project level languagePage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-jar-in-intellijpage">05. Creating jar in intellijPage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-bitbucket-repo-push-commit-code-to-bitbucket-via-intelijpage">06. Create a bitbucket repo push , commit code to bitbucket via intelijPage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hello-world-page">07. Hello World!Page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comments-documenting-code-with-javadocpage">08. Comments Documenting code with JavadocPage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oops-design-concepts-encapsulation-inheritence-polymorphismpage">09. OOPs Design &amp; Concepts-Encapsulation,Inheritence &amp; PolymorphismPage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datatypes-variables-operators-in-javapage">10. Datatypes, variables &amp; operators in JavaPage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access-modifiers">11. Access Modifiers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#program-flow-control-for-while-loop-break-continue">12. Program Flow Control , For &amp; while loop (break &amp; continue)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-objects-methods-constructors-getters-setters">13. Classes, Objects &amp; Methods , Constructors , Getters / Setters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anonymous-abstract-classes-interfaces">14. Anonymous &amp; Abstract Classes,Interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-functions">15. String Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#math-functions">16. Math Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-calculator">Exercise : calculator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clone-git-repo-for-the-exercise">Clone git repo for the exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-armstrong-number">Exercise : Armstrong number</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clone-the-bitbucket-repo">Clone the bitbucket repo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-binary-search">Exercise : Binary Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Clone the bitbucket repo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../designPatterns/index.html"><strong>Design Patterns</strong></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">code-java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>Basic se bhi besic</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/javadocs/dayOne/dayOne.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-se-bhi-besic">
+<h1><strong>Basic se bhi besic</strong><a class="headerlink" href="#basic-se-bhi-besic" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="topics">
+<h2>Topics<a class="headerlink" href="#topics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-java-history-of-java-java-principles-and-components-memory-management">
+<h3>01. What is Java? , History of Java, Java Principles and Components , Memory management<a class="headerlink" href="#what-is-java-history-of-java-java-principles-and-components-memory-management" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOMS0zczFUMDFsYmc">https://drive.google.com/open?id=0B5WQSHp6H2ZOMS0zczFUMDFsYmc</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="o2-verview">
+<h3>O2. verview<a class="headerlink" href="#o2-verview" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="program-structure-process-flow-intellij-essentials">
+<h3>03. Program Structure &amp; process flow &amp; Intellij Essentials<a class="headerlink" href="#program-structure-process-flow-intellij-essentials" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Program Structure - <a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOYjJSamdKaWJFeEU">https://drive.google.com/open?id=0B5WQSHp6H2ZOYjJSamdKaWJFeEU</a></p>
+<p>Intellij intro - <a class="reference external" href="https://drive.google.com/open?id=1t5993Y8zhNPEPCdNi7oi8eQCxQTAEvUp">https://drive.google.com/open?id=1t5993Y8zhNPEPCdNi7oi8eQCxQTAEvUp</a></p>
+<p>Intellij shortcuts - <a class="reference external" href="https://drive.google.com/open?id=1e_MSee1CDgT_GcQMTLaF5T1TwQ-tjRZq">https://drive.google.com/open?id=1e_MSee1CDgT_GcQMTLaF5T1TwQ-tjRZq</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="setting-up-sdk-project-level-languagepage">
+<h3>04. Setting up SDK &amp; project level languagePage<a class="headerlink" href="#setting-up-sdk-project-level-languagepage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOYlAtQ0FEY1NOZGM">https://drive.google.com/open?id=0B5WQSHp6H2ZOYlAtQ0FEY1NOZGM</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="creating-jar-in-intellijpage">
+<h3>05. Creating jar in intellijPage<a class="headerlink" href="#creating-jar-in-intellijpage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOU1p6QWpsNHJ1Vms">https://drive.google.com/open?id=0B5WQSHp6H2ZOU1p6QWpsNHJ1Vms</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="create-a-bitbucket-repo-push-commit-code-to-bitbucket-via-intelijpage">
+<h3>06. Create a bitbucket repo push , commit code to bitbucket via intelijPage<a class="headerlink" href="#create-a-bitbucket-repo-push-commit-code-to-bitbucket-via-intelijpage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOUmpvT0gwbnJWSGM">https://drive.google.com/open?id=0B5WQSHp6H2ZOUmpvT0gwbnJWSGM</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="hello-world-page">
+<h3>07. Hello World!Page<a class="headerlink" href="#hello-world-page" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=1mTiJnQLcTnVQHcrF24m-AyjdheFE-xQ4">https://drive.google.com/open?id=1mTiJnQLcTnVQHcrF24m-AyjdheFE-xQ4</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="comments-documenting-code-with-javadocpage">
+<h3>08. Comments Documenting code with JavadocPage<a class="headerlink" href="#comments-documenting-code-with-javadocpage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOVU8xQUhMNGtJYWs">https://drive.google.com/open?id=0B5WQSHp6H2ZOVU8xQUhMNGtJYWs</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="oops-design-concepts-encapsulation-inheritence-polymorphismpage">
+<h3>09. OOPs Design &amp; Concepts-Encapsulation,Inheritence &amp; PolymorphismPage<a class="headerlink" href="#oops-design-concepts-encapsulation-inheritence-polymorphismpage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOaXJSZFI5SGhwMEU">https://drive.google.com/open?id=0B5WQSHp6H2ZOaXJSZFI5SGhwMEU</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="datatypes-variables-operators-in-javapage">
+<h3>10. Datatypes, variables &amp; operators in JavaPage<a class="headerlink" href="#datatypes-variables-operators-in-javapage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOTm9ERk1yYi00NlE">https://drive.google.com/open?id=0B5WQSHp6H2ZOTm9ERk1yYi00NlE</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="access-modifiers">
+<h3>11. Access Modifiers<a class="headerlink" href="#access-modifiers" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOUEptOTAxeXlpcTQ">https://drive.google.com/open?id=0B5WQSHp6H2ZOUEptOTAxeXlpcTQ</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="program-flow-control-for-while-loop-break-continue">
+<h3>12. Program Flow Control , For &amp; while loop (break &amp; continue)<a class="headerlink" href="#program-flow-control-for-while-loop-break-continue" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOS0ZWTWhQZWtEZGM">https://drive.google.com/open?id=0B5WQSHp6H2ZOS0ZWTWhQZWtEZGM</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="classes-objects-methods-constructors-getters-setters">
+<h3>13. Classes, Objects &amp; Methods , Constructors , Getters / Setters<a class="headerlink" href="#classes-objects-methods-constructors-getters-setters" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOVmIwSDBPV2JBLWM">https://drive.google.com/open?id=0B5WQSHp6H2ZOVmIwSDBPV2JBLWM</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="anonymous-abstract-classes-interfaces">
+<h3>14. Anonymous &amp; Abstract Classes,Interfaces<a class="headerlink" href="#anonymous-abstract-classes-interfaces" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZObmN3YlIyM25SZ0U">https://drive.google.com/open?id=0B5WQSHp6H2ZObmN3YlIyM25SZ0U</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="string-functions">
+<h3>15. String Functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=1VzgLXOBFz7BxwRah5qaln_wuz2oeeem_">https://drive.google.com/open?id=1VzgLXOBFz7BxwRah5qaln_wuz2oeeem_</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="math-functions">
+<h3>16. Math Functions<a class="headerlink" href="#math-functions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><a class="reference external" href="https://drive.google.com/open?id=1l2cTM56lE-whNuJx1w3o81SJp0XpM3Jm">https://drive.google.com/open?id=1l2cTM56lE-whNuJx1w3o81SJp0XpM3Jm</a></p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="exercise-calculator">
+<h2>Exercise : calculator<a class="headerlink" href="#exercise-calculator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clone-git-repo-for-the-exercise">
+<h3>Clone git repo for the exercise<a class="headerlink" href="#clone-git-repo-for-the-exercise" title="Permalink to this headline">¶</a></h3>
+<p>$ git clone <a class="reference external" href="https://bitbucket_datreon&#64;bitbucket.org/datreon/calculator.git">https://bitbucket_datreon&#64;bitbucket.org/datreon/calculator.git</a></p>
+<blockquote>
+<div><p>pdf: <a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZONzBmZUtzeTNkeXc">https://drive.google.com/open?id=0B5WQSHp6H2ZONzBmZUtzeTNkeXc</a></p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="exercise-armstrong-number">
+<h2>Exercise : Armstrong number<a class="headerlink" href="#exercise-armstrong-number" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clone-the-bitbucket-repo">
+<h3>Clone the bitbucket repo<a class="headerlink" href="#clone-the-bitbucket-repo" title="Permalink to this headline">¶</a></h3>
+<p>$git clone <a class="reference external" href="https://bitbucket_datreon&#64;bitbucket.org/datreon/armstrong-number.git">https://bitbucket_datreon&#64;bitbucket.org/datreon/armstrong-number.git</a></p>
+<blockquote>
+<div><p>Pdf: <a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOaGhfa01ld3lnT2M">https://drive.google.com/open?id=0B5WQSHp6H2ZOaGhfa01ld3lnT2M</a></p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="exercise-binary-search">
+<h2>Exercise : Binary Search<a class="headerlink" href="#exercise-binary-search" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Clone the bitbucket repo<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>$git clone <a class="reference external" href="https://bitbucket_datreon&#64;bitbucket.org/datreon/binary-search.git">https://bitbucket_datreon&#64;bitbucket.org/datreon/binary-search.git</a></p>
+<blockquote>
+<div><p>pdf: <a class="reference external" href="https://drive.google.com/open?id=0B5WQSHp6H2ZOa0xnZ1lodDh1UjA">https://drive.google.com/open?id=0B5WQSHp6H2ZOa0xnZ1lodDh1UjA</a></p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../designPatterns/index.html" class="btn btn-neutral float-right" title="Design Patterns" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../index.html" class="btn btn-neutral float-left" title="Welcome to code-java’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, readTheDoccs
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
